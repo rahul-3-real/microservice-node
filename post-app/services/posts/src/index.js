@@ -1,18 +1,17 @@
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 
-const port = 3000;
+import postRoutes from "./controller.js";
+
+const port = 8000;
 const app = express();
 
 app.use(cors());
-
-// Data
-const posts = {};
+app.use(bodyParser.json());
 
 // Routes
-app.get("/posts", (req, res) => {});
-
-app.post("/posts", (req, res) => {});
+app.use("/posts", postRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
