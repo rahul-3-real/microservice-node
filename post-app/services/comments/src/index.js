@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
-app.use("/comments", commentRoutes);
+app.use("/posts", commentRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
